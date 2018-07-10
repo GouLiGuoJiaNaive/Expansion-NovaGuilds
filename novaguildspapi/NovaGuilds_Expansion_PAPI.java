@@ -58,7 +58,7 @@ public class NovaGuilds_Expansion_PAPI extends PlaceholderExpansion
 			return String.valueOf(np.getGuildRank().getName());
 		case "guild_leader":
                     Player leader = np.getGuild().getLeader().getPlayer();
-			return String.valueOf(leader.getCustomName());
+			return String.valueOf(leader.getName());
 		case "is_leader":
                     if (np.isLeader()==true) {
 			return "♔";   
