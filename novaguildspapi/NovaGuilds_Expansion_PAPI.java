@@ -1,18 +1,8 @@
-// Decompiled by Jad v1.5.8e2. Copyright 2001 Pavel Kouznetsov.
-// Jad home page: http://kpdus.tripod.com/jad.html
-// Decompiler options: packimports(3) fieldsfirst ansi space 
-// Source File Name:   GTACops_Expansion_PAPI.java
-
 package novaguildspapi;
 
 import co.marcin.novaguilds.api.basic.NovaPlayer;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.entity.Player;
-import co.marcin.novaguilds.api.storage.Resource;
-import co.marcin.novaguilds.api.util.RegionSelection;
-import co.marcin.novaguilds.enums.ChatMode;
-import co.marcin.novaguilds.enums.GuildPermission;
-import co.marcin.novaguilds.enums.RegionMode;
 import co.marcin.novaguilds.manager.PlayerManager;
 
 public class NovaGuilds_Expansion_PAPI extends PlaceholderExpansion
@@ -39,7 +29,7 @@ public class NovaGuilds_Expansion_PAPI extends PlaceholderExpansion
 
 	public String getVersion()
 	{
-		return "3.9";
+		return "40";
 	}
 
 	public String onPlaceholderRequest(Player p, String identifier)
@@ -58,15 +48,15 @@ public class NovaGuilds_Expansion_PAPI extends PlaceholderExpansion
 			return String.valueOf(np.getGuildRank().getName());
 		case "guild_leader":
                     Player leader = np.getGuild().getLeader().getPlayer();
+                    if (leader == null)
+			return "";
+                    else
 			return String.valueOf(leader.getName());
 		case "is_leader":
-                    if (np.isLeader()==true) {
+                    if (np.isLeader()==true) 
 			return "♔";   
-                    }
                     else
-                    {
                         return "♙"; 
-                    }
 		case "point":
 			return String.valueOf(np.getPoints());
 		case "guild_point":
