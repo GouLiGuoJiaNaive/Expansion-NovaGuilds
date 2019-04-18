@@ -12,26 +12,31 @@ public class NovaGuilds_Expansion_PAPI extends PlaceholderExpansion
 	{
 	}
 
+        @Override
 	public String getAuthor()
 	{
 		return "Marcin Wieczorek";
 	}
 
+        @Override
 	public String getIdentifier()
 	{
 		return "novaguilds";
 	}
 
+        @Override
 	public String getPlugin()
 	{
 		return "NovaGuilds";
 	}
 
+        @Override
 	public String getVersion()
 	{
 		return "40";
 	}
 
+        @Override
 	public String onPlaceholderRequest(Player p, String identifier)
 	{
 		if (p == null)
